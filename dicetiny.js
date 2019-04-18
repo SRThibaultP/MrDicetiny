@@ -11,25 +11,25 @@ dicetiny.on("message", function(message) {
   if(match_data) {
     var n_dice = parseInt(match_data[1], 10);
     var n_sides = parseInt(match_data[2], 10);
-    var s_stat = parseInt(match_data[3], 10);
+    var n_stat = parseInt(match_data[3], 10);
 
     if(n_dice > 9000) {
       dicetiny.sendMessage(channel_id, "It's over nine thousand");
       return;
     }
 
-    console.log("Lancer de " + n_dice + " dé à " + n_sides + " faces avec des stats de " + s_stat);
+    console.log("Lancer de " + n_dice + " dé à " + n_sides + " faces avec des stats de " + n_stat);
     var dice = roller.roll(n_dice, n_sides);
 
     var message_content = "";
     var roll_user = message.author;
     var sum;
-    var sucessValCri = 5;
+    var sucessValCri = 6;
     var sucessValCriSIX = 1;
     var sucessTXT = "Succès "
     var sucessGIF = "LIEN DU GIF SUCCES"
     var sucessGIFCri = "LIEN DU GIF SUCESS CRITIQUE";
-    var echecValCri = 95;
+    var echecValCri = 94;
     var echecValCriSIX = 6;
     var echecTXT = "Échec "
     var echecGIF = "LIEN DU GIF ECHEC"
@@ -42,30 +42,47 @@ dicetiny.on("message", function(message) {
         return prev + curr;
       });
 
-      if (n_sides == 100) {
-        if(sum <= sucessValCri) {
+      if (n_sides == 6) {
+        if(sum == sucessValCriSIX) {
           chanceux = " | " + "**" + sucessTXT + critique + "**" + sucessGIFCri;
         }
 
-        else if (sum <= s_stat) {
-          chanceux = " | " + "**" + sucessTXT + "**" + sucessGIF;
-        }
-
-        else if (sum >= echecValCri) {
+        else if (sum == echecValCriSIX) {
           chanceux = " | " + "**" + echecTXT + critique + "**" + echecGIFCri;
         }
 
-        else{
+        else if (sum <= n_stat) {
+          chanceux = " | " + "**" + sucessTXT + "**" + sucessGIF;
+        }
+
+        else if (sum > n_stat) {
           chanceux = " | " + "**" + echecTXT + "**" + echecGIF;
         }
       }
 
-      else {
-        if (sum <= s_stat) {
+      else if (n_sides == 100) {
+        if(sum < sucessValCri) {
+          chanceux = " | " + "**" + sucessTXT + critique + "**" + sucessGIFCri;
+        }
+
+        else if (sum > echecValCri) {
+          chanceux = " | " + "**" + echecTXT + critique + "**" + echecGIFCri;
+        }
+        else if (sum <= n_stat) {
           chanceux = " | " + "**" + sucessTXT + "**" + sucessGIF;
         }
 
-        else{
+        else if (sum > n_stat) {
+           chanceux = " | " + "**" + echecTXT + "**" + echecGIF;
+         }
+      }
+
+      else {
+        if (sum <= n_stat) {
+          chanceux = " | " + "**" + sucessTXT + "**" + sucessGIF;
+        }
+
+       else if (sum > n_stat) {
           chanceux = " | " + "**" + echecTXT + "**" + echecGIF;
         }
       }
@@ -76,69 +93,68 @@ dicetiny.on("message", function(message) {
 
     else {
     sum = dice[0];
-     if (n_sides == 100) {
-       if(sum <= sucessValCri) {
-         chanceux = " | " + "**" + sucessTXT + critique + "**" + sucessGIFCri;
-       }
 
-       else if (sum <= s_stat) {
-         chanceux = " | " + "**" + sucessTXT + "**" + sucessGIF;
-       }
+    if (n_sides == 6) {
+      if(sum == sucessValCriSIX) {
+        chanceux = " | " + "**" + sucessTXT + critique + "**" + sucessGIFCri;
+      }
 
-       else if (sum >= echecValCri) {
-         chanceux = " | " + "**" + echecTXT + critique + "**" + echecGIFCri;
-       }
+      else if (sum == echecValCriSIX) {
+        chanceux = " | " + "**" + echecTXT + critique + "**" + echecGIFCri;
+      }
 
-       else{
+      else if (sum <= n_stat) {
+        chanceux = " | " + "**" + sucessTXT + "**" + sucessGIF;
+      }
+
+      else if (sum > n_stat) {
+        chanceux = " | " + "**" + echecTXT + "**" + echecGIF;
+      }
+    }
+
+    else if (n_sides == 100) {
+      if(sum < sucessValCri) {
+        chanceux = " | " + "**" + sucessTXT + critique + "**" + sucessGIFCri;
+      }
+
+      else if (sum > echecValCri) {
+        chanceux = " | " + "**" + echecTXT + critique + "**" + echecGIFCri;
+      }
+      else if (sum <= n_stat) {
+        chanceux = " | " + "**" + sucessTXT + "**" + sucessGIF;
+      }
+
+      else if (sum > n_stat) {
          chanceux = " | " + "**" + echecTXT + "**" + echecGIF;
        }
-     }
+    }
 
-     if (n_sides == 6) {
-       if(sum <= sucessValCriSIX) {
-         chanceux = " | " + "**" + sucessTXT + critique + "**" + sucessGIFCri;
-       }
+    else {
+      if (sum <= n_stat) {
+        chanceux = " | " + "**" + sucessTXT + "**" + sucessGIF;
+      }
 
-       else if (sum <= s_stat) {
-         chanceux = " | " + "**" + sucessTXT + "**" + sucessGIF;
-       }
+     else if (sum > n_stat) {
+        chanceux = " | " + "**" + echecTXT + "**" + echecGIF;
+      }
+    }
 
-       else if (sum >= echecValCriSIX) {
-         chanceux = " | " + "**" + echecTXT + critique + "**" + echecGIFCri;
-       }
-
-       else{
-         chanceux = " | " + "**" + echecTXT + "**" + echecGIF;
-       }
-     }
-
-     else {
-       if (sum <= s_stat) {
-         chanceux = " | " + "**" + sucessTXT + "**" + sucessGIF;
-       }
-
-       else{
-         chanceux = " | " + "**" + echecTXT + "**" + echecGIF;
-       }
-     }
-
-     message_content = roll_user.mention() + ": " + dice.join(" & ") + " | Total = " + sum  + chanceux;
-     console.log("Le résultat est " + sum + ".");
+     message_content = roll_user.mention() + ": " + sum  + chanceux;
+     console.log("Le résultat est " + sum + "." + chanceux);
 
     if(message_content.length > 2000) {
-      var sum_message = "Le message est plus long que la limite de Discord, cependant le résultat est " + sum;
+      var sum_message = "Texte trop long, résultat: " + sum;
 
       dicetiny.sendMessage(channel_id, sum_message);
       return;
     }
-
-    dicetiny.sendMessage(channel_id, message_content);
-    }
   }
+  dicetiny.sendMessage(channel_id, message_content);
+}
 });
 
 fs.readFile("config.json", function(err, data) {
   var auth_token =  JSON.parse(data).discord_token;
   dicetiny.loginWithToken(auth_token);
-  console.log("Bot en ligne.");
+  console.log("Bot en ligne");
 });
