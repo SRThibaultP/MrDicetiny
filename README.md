@@ -1,4 +1,5 @@
 # Mr Dicetiny
+[![CodeFactor](https://www.codefactor.io/repository/github/srthibaultp/mrdicetiny/badge/master)](https://www.codefactor.io/repository/github/srthibaultp/mrdicetiny/overview/master)
 
 Un bot discord pour faire des lancers de dé.
 
