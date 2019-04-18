@@ -1,0 +1,31 @@
+{
+  "name": "dicetiny",
+  "version": "1.0.0",
+  "description": "Un bot discord pour faire des lancers de dé.",
+  "main": "dicetiny.js",
+  "dependencies": {
+    "discord.js": "^8.0.0",
+    "forever-monitor": "^1.7.0",
+    "roller": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SRThibaultP/MrDicetiny.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "chat",
+    "dice"
+  ],
+  "author": "ThibaultP (https://twitter.com/SRThibaultP)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SRThibaultP/MrDicetiny/issues"
+  },
+  "homepage": "https://github.com/SRThibaultP/MrDicetiny#readme"
+}
