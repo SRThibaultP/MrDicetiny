@@ -22,10 +22,11 @@ Le dé affiche uniquement le résultat si il ne possède pas 6 ou 100 faces.
 
 # Usage
 
-1. Coller la clé de l'API Discord dans `config.json`
-2. Installer [Node.js](https://nodejs.org)
-2. Exécuter la commande `npm install` dans le dossier de Mr Dicetiny
-3. Lancer le fichier `start.bat`
+1. Télécharger les fichiers [ici](https://github.com/SRThibaultP/MrDicetiny/releases)
+2. Coller la clé de l'API Discord dans `config.json`
+3. Installer [Node.js](https://nodejs.org)
+4. Exécuter la commande `npm install` dans le dossier de Mr Dicetiny
+5. Lancer le fichier `start.bat`
 
 Invitation du bot discord : https://discordapp.com/oauth2/authorize?&client_id=INSERTCLIENTID&scope=bot&permissions=0
 
