@@ -1,18 +1,24 @@
 # Mr Dicetiny
 [![CodeFactor](https://www.codefactor.io/repository/github/srthibaultp/mrdicetiny/badge/master)](https://www.codefactor.io/repository/github/srthibaultp/mrdicetiny/overview/master)
 
-Un bot discord pour faire des lancers de dé.
+Un bot discord pour faire des lancers de dé selon les règles des JDR.
 
-# Commands
+# Commandes
 
-La seul commande disponible est `/roll`
+Commandes disponibles : `/roll` et `/rolls`
 
-Syntaxe: `/roll xdysz`
-x est le nombre de dé à lancer
-y est le nombre de côté que le dé possède
-z est le nombre qui permet de faire un succès ou un échec
+Syntaxe: `/rolls dxsy`
+x est le nombre de côté que le dé possède.
+y est les stats que le personage possède.
 
-Exemple: `/roll 2d20s10` lance deux dé à deux faces puis affiche le total du résultat avec le succès ou l'échec
+Exemple: `/rolls d100s10` lance un dé à cent faces avec des stats de 10 puis affiche le total du résultat avec le succès ou l'échec (critique ou non)
+
+Syntaxe: `/roll dx`
+x est le nombre de côté que le dé possède.
+
+Exemple: `/rolls d6` lance un dé à six faces puis affiche le total du résultat avec le succès ou l'échec
+
+Le dé affiche uniquement le résultat si il ne possède pas 6 ou 100 faces.
 
 # Usage
 
@@ -23,6 +29,6 @@ Exemple: `/roll 2d20s10` lance deux dé à deux faces puis affiche le total du r
 
 Invitation du bot discord : https://discordapp.com/oauth2/authorize?&client_id=INSERTCLIENTID&scope=bot&permissions=0
 
-# Credits
+# Crédits
 
 Fork du code [rollbot](https://github.com/mdszy/rollbot) de [mdszy](https://github.com/mdszy)
