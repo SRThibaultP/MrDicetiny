@@ -1,5 +1,5 @@
 # Mr Dicetiny
-[![CodeFactor](https://www.codefactor.io/repository/github/srthibaultp/mrdicetinyzero/badge)](https://www.codefactor.io/repository/github/srthibaultp/mrdicetinyzero)
+[![CodeFactor](https://www.codefactor.io/repository/github/srthibaultp/mrdicetiny/badge)](https://www.codefactor.io/repository/github/srthibaultp/mrdicetiny)
 
 Un bot discord pour faire des lancers de dé selon les règles des JDR.
 
